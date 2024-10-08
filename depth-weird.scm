@@ -5,5 +5,5 @@
           (else (weird (+ (* 3 x) 1) (+ ctr 1)))))
   (weird x 0))
 
-(depth-weird 15)
+(depth-weird 15) ; ; (out) 17
 
