@@ -1,0 +1,12 @@
+(define (my-equal? left right)
+  (if (and (pair? left) (pair? right))
+    (if (my-equal? (car left) (car right))
+      (my-equal? (cdr left) (cdr right))
+      #f)
+    (eq? left right)))
+
+(my-equal? '(1 2 3) '(1 2 3))
+(my-equal? '(1 2 3) '(4 5 6))
+(my-equal? '(1 2 3) '(1 2))
+(my-equal? '(1 2 3) '())
+(my-equal? '() '(1 2 3))
