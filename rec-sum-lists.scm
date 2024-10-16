@@ -1,0 +1,11 @@
+(define (rec-sum-lists left right)
+  (let ((has-left (pair? left))
+        (has-right (pair? right)))
+    (cond ((and has-left has-right) (cons (+ (car left) (car right)) (rec-sum-lists (cdr left) (cdr right))))
+          (has-left (cons (car left) (rec-sum-lists (cdr left) right)))
+          (has-right (cons (car right) (rec-sum-lists left (cdr right))))
+          (else '()))))
+
+(rec-sum-lists '(1 2 3 4) '(5 6 7))
+(rec-sum-lists '(1 2 3 4) '())
+(rec-sum-lists '() '(1 2 3))
