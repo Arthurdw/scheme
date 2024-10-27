@@ -198,8 +198,6 @@
 (assq '("bye" sir) kvp)
 (assoc '("bye" sir) kvp)
 
-(define (dict) (list))
-
 (define (get ident dict)
   (define fetched (assoc ident dict))
   (if (not (boolean? fetched))
