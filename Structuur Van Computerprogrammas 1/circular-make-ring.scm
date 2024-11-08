@@ -1,4 +1,4 @@
-(define (make-ring! start)
+(define (make-ring start)
   (define ring '())
   (do ((i start (- i 1)))
     ((= i 0)
@@ -20,6 +20,6 @@
   (aux r))
 
 
-(define r (make-ring! 3))
+(define r (make-ring 3))
 (print-ring r)
 (print-ring (cdr r))
