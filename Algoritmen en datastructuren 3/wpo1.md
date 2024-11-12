@@ -2,7 +2,8 @@
 
 ## Exercise 1
 
-> What is the number of blocks needed on a 4 GiB disk when the block size is 512 bytes?
+> What is the number of blocks needed on a 4 GiB disk when the block size is 512
+> bytes?
 
 4 GiB is = 4 \* 1024 MiB  
 4 \* 1024 Mib = 4 \* 1024 \* 1024KiB  
