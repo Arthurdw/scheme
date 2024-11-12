@@ -8,6 +8,17 @@
        ring))
     (set! ring (append ring (list i)))))
 
+; other way
+; (define (make-ring! n)
+;   (let ((last (cons 0 '())))
+;     (define (make-lst i)
+;       (if (= i 0)
+;         last
+;         (cons i (make-lst (- i 1)))))
+;     (let ((lst (make-lst n)))
+;           (set-cdr! last lst)
+;           lst)))
+
 (define (print-ring r)
   (define (aux l)
     (if (not (null? l))
