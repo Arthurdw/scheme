@@ -1,5 +1,4 @@
 ; TODO: fix this
-
 (define (symbol<? s1 s2)
   (string<? (symbol->string s1) (symbol->string s2)))
  
@@ -35,10 +34,14 @@
 
 
 (define (merge! lst1 lst2)
-  (define (merger! res1 res2)
-    (
+  (define (do-merge! end)
+    'ok)
 
-
+  (define (merger! end)
+    (if (null? end)
+      lst1
+      (do-merge! end)))
+  (merger! lst1)
 
 (define best1 '((ann (meiboomstraat 12 1820 Eppegem))
                 (bert (populierendreef 7 1050 Brussel))
