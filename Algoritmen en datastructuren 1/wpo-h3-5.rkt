@@ -14,3 +14,4 @@
 
 (display (intersection (plist:from-scheme-list '(2 4 5 6 7 8) =)
                        (plist:from-scheme-list '(1 3 5 7 9) =)))
+; #(struct:positional-list #0=#(struct:list-node 5 () #(struct:list-node 7 #0# ())) #<procedure:eq?>)
