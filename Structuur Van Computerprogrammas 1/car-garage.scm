@@ -33,14 +33,14 @@
       (lambda () #f)
       (used-space 'increase!)))
 
-  (define (car-leaves) (used-space 'decrease!))
+  (define (car-leaves!) (used-space 'decrease!))
 
   (define (dispatch m)
     (cond ((eq? m 'level) (level))
           ((eq? m 'empty?) (empty?))
           ((eq? m 'full?) (full?))
           ((eq? m 'car-enters!) (car-enters!))
-          ((eq? m 'car-leaves!) (car-leaves))))
+          ((eq? m 'car-leaves!) (car-leaves!))))
 
   dispatch)
 
