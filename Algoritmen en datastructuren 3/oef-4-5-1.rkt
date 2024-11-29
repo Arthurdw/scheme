@@ -5,23 +5,24 @@
         (prefix (a-d stack linked) stack:))
 
 (define (stack-to-list buffer)
-  (if (stack:empty? buffer)
-    '()
-    (cons (stack:pop! buffer) (stack-to-list buffer))))
+  (let loop
+    ((acc '()))
+    (if (stack:empty? buffer)
+      acc
+      (loop (cons (stack:pop! buffer) acc)))))
 
 (define (postfix-eval lst)
-  (let loop
-    ((stmt lst)
-     (buffer (stack:new)))
+  (define buffer (stack:new))
 
+  (let loop ((stmt lst))
     (cond
       ((null? stmt) (stack:pop! buffer))
       ((procedure? (car stmt))
-        (stack:push! buffer (apply (car stmt) (reverse (stack-to-list buffer))))
-        (loop (cdr stmt) buffer))
+        (stack:push! buffer (apply (car stmt) (stack-to-list buffer)))
+        (loop (cdr stmt)))
       (else
         (stack:push! buffer (car stmt))
-        (loop (cdr stmt) buffer)))))
+        (loop (cdr stmt))))))
 
 (display (postfix-eval (list 5 6 +)))
 (newline)
