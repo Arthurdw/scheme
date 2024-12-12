@@ -46,7 +46,6 @@
 (define (all-apples-dmv-bewerk boom)
   (bewerk-boom boom (lambda (blad) '()) (lambda (appel) (list (appel-type appel))) append '()))
 
-
 (leafs boom) ; ; (out) 4
 (all-apples boom) ; ; (out) (golden granny golden cox)
 (apple-types boom) ; ; (out) (granny golden cox)
